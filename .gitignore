@@ -1,0 +1,21 @@
+.DS_Store
+
+# Gradle
+.gradle/
+.gradle-home/
+build/
+**/build/
+**/.gradle/
+
+# IDE
+.idea/
+**/.idea/
+*.iml
+out/
+**/out/
+
+# Logs
+*.log
+
+# OS / misc
+Thumbs.db

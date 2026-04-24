@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: payment-client-service
+  cloud:
+    openfeign:
+      client:
+        config:
+          payment-provider:
+            connectTimeout: 1000
+            readTimeout: 2000
+            loggerLevel: full
+
+server:
+  port: 8080
+
+provider:
+  base-url: http://localhost:8081

@@ -62,12 +62,14 @@ public class PaymentService {
         simpleCircuitBreaker.assertRequestAllowed();
 
         try {
-            ProviderPaymentResponse providerResponse = manualRetryService.executeWithRetry(() ->
+            ProviderPaymentResponse providerResponse = manualRetryService.execute(() ->
                     paymentProviderFeignClient.createPayment(
                             mode,
                             new ProviderPaymentRequest(request.amount(), request.currency())
                     )
             );
+
+
 
             simpleCircuitBreaker.recordSuccess();
 
